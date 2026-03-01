@@ -4,12 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -18,13 +14,8 @@ import lombok.Setter;
 @Setter
 @RequiredArgsConstructor
 @JsonPropertyOrder({ "id", "amount", "category", "createdAt", "date", "title" })
-@Document(collection = "expenses")
-public class Expense {
-    
-    @Id
-    @Indexed(unique=true)
+public class ExpenseResponseDto {
     private String id;
-
     private String title;
     private BigDecimal amount;
     private String category;
