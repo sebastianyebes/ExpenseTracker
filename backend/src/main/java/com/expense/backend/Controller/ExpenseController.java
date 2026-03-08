@@ -11,6 +11,7 @@ import com.expense.backend.Service.ExpenseService;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/api/expenses")
+@CrossOrigin(origins = "http://localhost:5173") // Allow requests from the frontend the fastest way to enable CORS for the entire controller
 public class ExpenseController {
 
     private final ExpenseService expenseService;    
